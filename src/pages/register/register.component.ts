@@ -1,3 +1,5 @@
+import { ButtonModule } from 'primeng/button';
+
 import { Component } from '@angular/core';
 import { User } from '../../interface/user';
 import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -5,7 +7,7 @@ import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, ButtonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
