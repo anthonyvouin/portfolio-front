@@ -42,6 +42,7 @@ export class RegisterComponent {
         },
         body: JSON.stringify(user)
       })
+
       .then(response => {
         if (!response.ok) {
           throw new Error('Erreur lors de la création du compte');
@@ -49,13 +50,14 @@ export class RegisterComponent {
         return response.json();
       })
       
+
       .then(data => {
         console.log('Réponse du serveur:', data);
         // Stocker le JWT dans un cookie avec une durée de validité d'une heure
         document.cookie = `jwt=${data.token}; expires=${new Date(Date.now() + 3600 * 1000).toUTCString()}; path=/`;
-        // Rediriger l'utilisateur vers une autre page par exemple
-        window.location.href = '/accueil';
+       
       })
+
       .catch(error => {
         console.error('Erreur lors de la création du compte:', error);
       });
