@@ -1,0 +1,24 @@
+<p>register works!</p>
+
+
+
+<form (submit)="registerUser()">
+    <div>
+      <label for="firstName">Prénom</label>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="userData.firstName" required>
+    </div>
+    <div>
+      <label for="lastName">Nom</label>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="userData.lastName" required>
+    </div>
+    <div>
+      <label for="email">Adresse e-mail</label>
+      <input type="email" id="email" name="email" [(ngModel)]="userData.email" required>
+    </div>
+    <div>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" [(ngModel)]="userData!.password" required>
+    </div>
+    <button type="submit" [disabled]="!userData.firstName || !userData.lastName || !userData.email || !userData.password">Créer un compte</button>
+  </form>
+  
