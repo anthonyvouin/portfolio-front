@@ -22,9 +22,7 @@ export class ComposentApiComponent implements OnInit {
 
     const result = await fetch("http://localhost:3000/test/test")
 
-
     console.log(await result.json())
-
     
   }
 
