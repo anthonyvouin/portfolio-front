@@ -36,16 +36,6 @@ export class RegisterComponent {
       };
   
 
-    // Configuration de la requête HTTP avec les données de l'utilisateur
-    // const requestOptions: RequestInit = {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(user)
-    //   };
-
-
     // Envoi de la requête HTTP pour enregistrer l'utilisateur
     this.apiService.request<any>('/auth/register','POST', user)
       .then((data) => {
@@ -61,7 +51,6 @@ export class RegisterComponent {
       .catch(error => {
         console.error('Erreur lors de la création du compte:', error);
       });
-
 
 
   }
