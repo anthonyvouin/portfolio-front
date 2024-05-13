@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../../interface/user';
 import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from '../../services/api.services';
 import { AuthService } from '../../services/auth.services'; 
 
@@ -20,7 +19,6 @@ export class RegisterComponent {
 
   constructor(
     private readonly formBuilder: FormBuilder,
-    private readonly cookieService: CookieService,
     private readonly authService: AuthService,
     private apiService: ApiService, 
     private readonly router:Router) {}
@@ -34,7 +32,7 @@ export class RegisterComponent {
   })
   
   
-    // rMéthode pour recuperer les données saisons parutilisateur
+    // Méthode pour recuperer les données saisi par utilisateur
     registerUser(): void {
     if (this.formGroup.valid) {
       const user: User = {
