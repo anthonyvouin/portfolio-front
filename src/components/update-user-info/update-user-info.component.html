@@ -1,6 +1,8 @@
 <!-- update-user-info.component.html -->
-<div class="container mx-auto mt-8">
-    <form [formGroup]="updateUserInfoForm" (submit)="onSubmit()" class="max-w-md mx-auto">
+<div  class="container mx-auto mt-8 ">
+    <h2 class="mb-4 text-2xl font-semibold">Mettre à jour vos informations de compte</h2>
+
+    <form [formGroup]="updateUserInfoForm" (submit)="onSubmit()" >
       <div class="mb-4">
         <label for="firstName" class="block">Prénom</label>
         <input type="text" id="firstName" formControlName="firstName" required
