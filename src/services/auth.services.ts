@@ -2,6 +2,8 @@
 
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,10 @@ export class AuthService {
   private isAuthenticated: boolean = false;
   private token: string | null = null;
 
-  constructor(private cookieService: CookieService) {}
+  constructor(
+    private cookieService: CookieService,
+    private router: Router
+  ) {}
 
   // Méthode pour connecter l'utilisateur et stocker le JWT dans un cookie
   login(token: string): void {
@@ -26,6 +31,7 @@ export class AuthService {
     this.token = null;
     // Supprimer le JWT du cookie
     this.cookieService.delete('jwt');
+    this.router.navigate(['/']); 
   }
 
   // Méthode pour vérifier si l'utilisateur est connecté en vérifiant la présence du JWT dans le cookie
