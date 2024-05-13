@@ -19,7 +19,7 @@ export class UpdateUserInfoComponent {
     private readonly formBuilder: FormBuilder,
     private readonly authService: AuthService,
     private apiService: ApiService, 
-    private readonly router:Router) {}
+    ) {}
 
   // Initialisation du formulaire réactif avec les champs requis et les validateurs
   updateUserInfoForm: FormGroup = this.formBuilder.group({
@@ -33,9 +33,9 @@ export class UpdateUserInfoComponent {
     onSubmit(): void {
         if (this.updateUserInfoForm.valid) {
         const updatedUserInfo: UserWithoutPwdandAdmin = {
-        firstName: this.updateUserInfoForm.value.firstName,
-        lastName: this.updateUserInfoForm.value.lastName,
-        email: this.updateUserInfoForm.value.email
+          firstName: this.updateUserInfoForm.get('firstName')?.value,
+          lastName: this.updateUserInfoForm.get('lastName')?.value,
+          email: this.updateUserInfoForm.get('email')?.value
       };
 
 
