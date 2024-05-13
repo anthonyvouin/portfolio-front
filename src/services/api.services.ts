@@ -1,6 +1,7 @@
 // api.service.ts
 
 import { Injectable } from '@angular/core';
+import { AuthService } from './auth.services'
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +11,26 @@ export class ApiService {
 
   private baseUrl = 'http://localhost:3000'; // Modifier l'URL de base selon vos besoins
 
-  constructor() { }
+  constructor(  private authService: AuthService)  { }
 
 
   // Méthode générique pour effectuer une requête HTTP
-  request<T>(url: string, method:string, body:null | object=null ): Promise<T> {
+  request<T>(url: string, method:string, body:null | object=null, token:string | null = null ): Promise<T> {
+
 
       // Configuration de la requête HTTP avec les données de l'utilisateur
         const requestOptions: RequestInit = {
           method: method,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+              // Si un token est disponible, l'ajouter à l'en-tête Authorization
+        ...(token && { 'Authorization': `Bearer ${token}` })
           },
           body: body?JSON.stringify(body):null
         };
   
+  
+
 
     // Construction de l'URL complète en concaténant l'URL de base et l'URL spécifiée
 

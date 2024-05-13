@@ -42,9 +42,9 @@ export class LoginComponent {
       this.apiService.request<any>('/auth/login','POST', user)
       .then((data) => {
         if (typeof data === 'object' && 'token' in data) {
-          this.authService.login(data.token); // Utilisez le service AuthService pour stocker le JWT dans les cookies
+          this.authService.login(data.token); 
           this.formGroup.reset();
-          this.router.navigate(['/profil']); // Redirigez vers la page de profil
+          this.router.navigate(['/profil']); 
         } else {
           console.error('Erreur: le token est manquant dans la réponse du serveur');
         }
