@@ -3,6 +3,8 @@ import { User } from '../../interface/user';
 import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from '../../services/api.services';
+import { AuthService } from '../../services/auth.services'; 
+
 import { Router } from '@angular/router'; // *
 
 
@@ -19,6 +21,7 @@ export class RegisterComponent {
   constructor(
     private readonly formBuilder: FormBuilder,
     private readonly cookieService: CookieService,
+    private readonly authService: AuthService,
     private apiService: ApiService, 
     private readonly router:Router) {}
 
@@ -46,9 +49,8 @@ export class RegisterComponent {
     this.apiService.request<any>('/auth/register','POST', user)
       .then((data) => {
         if (typeof data === 'object' && 'token' in data) {
-          console.log('Réponse du serveur:', data);
-          // Stocker le JWT dans un cookie avec une durée de validité d'une heure
-          document.cookie = `jwt=${data.token}; expires=${new Date(Date.now() + 3600 * 1000).toUTCString()}; path=/`;
+          this.authService.login(data.token); // Utilisez le service AuthService pour stocker le JWT dans les cookies
+
           this.formGroup.reset();
           this.router.navigate(['/profil']); 
 
