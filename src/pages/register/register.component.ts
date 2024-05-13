@@ -34,7 +34,7 @@ export class RegisterComponent {
   })
   
   
-    // Méthode pour enregistrer un nouvel utilisateur
+    // rMéthode pour recuperer les données saisons parutilisateur
     registerUser(): void {
     if (this.formGroup.valid) {
       const user: User = {
@@ -50,7 +50,6 @@ export class RegisterComponent {
       .then((data) => {
         if (typeof data === 'object' && 'token' in data) {
           this.authService.login(data.token); // Utilisez le service AuthService pour stocker le JWT dans les cookies
-
           this.formGroup.reset();
           this.router.navigate(['/profil']); 
 
