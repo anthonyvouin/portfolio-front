@@ -3,6 +3,7 @@ import { User } from '../../interface/user';
 import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from '../../services/api.services';
+import { Router } from '@angular/router'; // *
 
 
 @Component({
@@ -14,7 +15,12 @@ import { ApiService } from '../../services/api.services';
 })
 export class RegisterComponent {
 
-  constructor(private readonly formBuilder: FormBuilder, private readonly cookieService: CookieService, private apiService: ApiService) {}
+
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly cookieService: CookieService,
+    private apiService: ApiService, 
+    private readonly router:Router) {}
 
   // Initialisation du formulaire réactif avec les champs requis et les validateurs
   formGroup: FormGroup = this.formBuilder.group({
@@ -44,6 +50,8 @@ export class RegisterComponent {
           // Stocker le JWT dans un cookie avec une durée de validité d'une heure
           document.cookie = `jwt=${data.token}; expires=${new Date(Date.now() + 3600 * 1000).toUTCString()}; path=/`;
           this.formGroup.reset();
+          this.router.navigate(['/profil']); 
+
         } else {
           console.error('Erreur: le token est manquant dans la réponse du serveur');
         }
