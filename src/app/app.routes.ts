@@ -4,6 +4,7 @@ import { LoginComponent } from '../pages/login/login.component';
 import { RegisterComponent } from '../pages/register/register.component';
 import { ProfilComponent } from '../pages/profil/profil.component';
 import { AuthGuard } from '../guard/auth.guard'
+import { ContactComponent } from '../pages/contact/contact.component';
 
 
 export const routes: Routes = [
@@ -16,12 +17,14 @@ export const routes: Routes = [
     },
 
     {
-        path:'login', component: LoginComponent // Utilisez le garde de route pour protéger la route
+        path:'login', component: LoginComponent 
     },
 
     {
         path:'profil', component: ProfilComponent, canActivate: [AuthGuard] // Utilisez le garde de route pour protéger la route
     },
-  
+    {
+        path:'contact', component: ContactComponent
+    },
     
 ];
