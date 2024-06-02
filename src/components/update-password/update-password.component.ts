@@ -35,7 +35,7 @@ export class UpdatePasswordComponent {
     const passwordControl = formGroup.get('password');
     const confirmPasswordControl = formGroup.get('confirmPassword');
 
-    if (passwordControl && confirmPasswordControl) { // Assurez-vous que les contrôles existent avant de les utiliser
+    if (passwordControl && confirmPasswordControl) { 
       if (passwordControl.value !== confirmPasswordControl.value) {
         confirmPasswordControl.setErrors({ passwordMismatch: true });
       } else {
