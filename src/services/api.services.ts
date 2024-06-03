@@ -9,7 +9,8 @@ import { AuthService } from './auth.services'
 
 export class ApiService {
 
-  private baseUrl = 'http://localhost:3000'; // Modifier l'URL de base selon vos besoins
+  // Ur: du back pour les appels api
+  private baseUrl = 'http://localhost:3000'; 
 
   constructor(  private authService: AuthService)  { }
 
