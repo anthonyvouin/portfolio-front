@@ -28,8 +28,8 @@
     margin-bottom: 1.5rem;
     width: 100%;
     max-width: 48rem; 
-    border-top-width: 2px;
-    border-color: #edf2f7;
+    border-top-width: 10px;
+    border-color: #0000001F
   }
   
   .current-job-title {
@@ -56,6 +56,8 @@
     list-style-type: disc;
     margin-top: 1rem;
     text-align: center;
+    list-style-type: none; 
+    padding-bottom: 2rem; 
   }
   
   .shadow-separator {
