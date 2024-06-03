@@ -1,16 +1,33 @@
 <!-- header.component.html -->
-<header class="bg-gray-800 py-4">
-  <div class="container mx-auto px-4 flex justify-between items-center">
-    <a href="#" class="text-white text-xl font-semibold ml-4">Mon Application</a>
-    <nav class="space-x-4 mr-4">
-      <a href="#" class="text-white hover:underline">Accueil</a>
-      <a href="/contact" class="text-white hover:underline">Contact</a>
-
-      <ng-container *ngIf="!isLoggedIn()">
-        <a href="/register" class="text-white hover:underline">Inscription</a>
-        <a href="/login" class="text-white hover:underline">Connexion</a>
-      </ng-container>
-      <button (click)="logout()" *ngIf="isLoggedIn()" class="text-white hover:underline">Déconnexion</button>
+<header class="bg-gray-200 shadow-separator">
+  <div class="container mx-auto py-4">
+    <!-- Main navigation -->
+    <nav class="flex justify-center space-x-8">
+      <a href="#" class="text-dark-gray hover:text-red-500">Accueil</a>
+      <a href="#" class="text-dark-gray hover:text-red-500">Compétences</a>
+      <a href="#" class="text-dark-gray hover:text-red-500">Réalisations</a>
+      <a href="#" class="text-dark-gray hover:text-red-500">Formations</a>
+      <a href="#" class="text-dark-gray hover:text-red-500">Blog</a>
     </nav>
   </div>
 </header>
+
+<!-- Main section -->
+<section class="text-center py-16">
+  <div class="container mx-auto">
+    <h1 class="text-4xl font-bold mb-4 text-dark-gray">Besoin d'un développeur web ?</h1>
+    <p class="text-lg mb-6 text-dark-gray">
+      Disponible pour vous aider dans l'élaboration de votre projet, je vous invite à consulter ci-dessous l'ensemble de mes références pour mieux connaître mon profil.
+    </p>
+    <div class="flex justify-center space-x-4">
+      <button class="bg-red-500 text-white px-4 py-2 rounded flex items-center">
+        <span class="material-icons mr-2">cloud_download</span>
+        Télécharger mon CV
+      </button>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded flex items-center">
+        <span class="material-icons mr-2">person_add</span>
+        Me suivre sur LinkedIn
+      </button>
+    </div>
+  </div>
+</section>
