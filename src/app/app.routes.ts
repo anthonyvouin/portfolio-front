@@ -4,6 +4,7 @@ import { LoginComponent } from '../pages/login/login.component';
 import { RegisterComponent } from '../pages/register/register.component';
 import { AuthGuard } from '../guard/auth.guard'
 import { ContactComponent } from '../pages/contact/contact.component';
+import { ProfilComponent } from '../pages/profil/profil.component';
 
 
 export const routes: Routes = [
@@ -19,7 +20,10 @@ export const routes: Routes = [
         path:'login', component: LoginComponent 
     },
     {
-        path:'contact', component: ContactComponent, canActivate: [AuthGuard]
+        path:'profil', component: ProfilComponent, canActivate: [AuthGuard]
+    },
+    {
+        path:'contact', component: ContactComponent, //canActivate: [AuthGuard]
     },
     
 ];
