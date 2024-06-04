@@ -1,0 +1,46 @@
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bg-light-gray {
+  background-color: #f6f6f6;
+}
+
+.text-dark-gray {
+  color: #444;
+}
+
+.text-red-500 {
+  color: #f56565;
+}
+
+
+.divider {
+  position: relative;
+  margin: 1.5rem auto; /* Utilisation de "auto" pour centrer le diviseur horizontalement */
+  width: calc(100% - 40px); /* Ajustement de la largeur pour réduire l'espace à gauche et à droite */
+  max-width: 600px; 
+  border-top: 5px solid #0000001F;
+  text-align: center; /* Pour centrer le texte à l'intérieur du diviseur */
+}
+
+
+.divider span {
+  position: absolute;
+  top: -0.8rem; /* Adjust this value to move the text up or down */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f6f6f6;
+  padding: 0 1rem;
+  font-weight: bold;
+  color: #444;
+}
+
+
+
+.lg\:grid-cols-4 {
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
