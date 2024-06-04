@@ -3,17 +3,6 @@
   margin: 0 auto;
 }
 
-.bg-light-gray {
-  background-color: #f6f6f6;
-}
-
-.text-dark-gray {
-  color: #444;
-}
-
-.text-red-500 {
-  color: #f56565;
-}
 
 
 .divider {
@@ -28,13 +17,12 @@
 
 .divider span {
   position: absolute;
-  top: -0.8rem; 
+  top: -0.9rem; 
   left: 50%;
   transform: translateX(-50%);
-  background: #f6f6f6;
+  background: #fffffe;
   padding: 0 1rem;
   font-weight: bold;
-  color: #444;
 }
 
 
