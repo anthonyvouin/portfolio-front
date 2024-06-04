@@ -18,17 +18,17 @@
 
 .divider {
   position: relative;
-  margin: 1.5rem auto; /* Utilisation de "auto" pour centrer le diviseur horizontalement */
-  width: calc(100% - 40px); /* Ajustement de la largeur pour réduire l'espace à gauche et à droite */
+  margin: 1.5rem auto; 
+  width: calc(100% - 40px); 
   max-width: 600px; 
   border-top: 5px solid #0000001F;
-  text-align: center; /* Pour centrer le texte à l'intérieur du diviseur */
+  text-align: center; 
 }
 
 
 .divider span {
   position: absolute;
-  top: -0.8rem; /* Adjust this value to move the text up or down */
+  top: -0.8rem; 
   left: 50%;
   transform: translateX(-50%);
   background: #f6f6f6;
@@ -43,4 +43,12 @@
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+}
+
+.mb-8 {
+  margin-bottom: 1.5rem; 
+}
+
+.mt-8 {
+  margin-top: 2.5rem; 
 }
