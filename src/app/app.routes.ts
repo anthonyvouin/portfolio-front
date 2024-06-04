@@ -5,13 +5,21 @@ import { RegisterComponent } from '../pages/register/register.component';
 import { AuthGuard } from '../guard/auth.guard'
 import { ContactComponent } from '../pages/contact/contact.component';
 import { ProfilComponent } from '../pages/profil/profil.component';
+import { SkillsComponent } from '../pages/skills/skills.component';
+
 
 
 export const routes: Routes = [
     {
         path:'', component: HomeComponent
     },
-   
+    {
+        path:'contact', component: ContactComponent, //canActivate: [AuthGuard]
+    },
+    {
+        path:'competences', component: SkillsComponent, //canActivate: [AuthGuard]
+    },
+    
     {
         path:'register', component: RegisterComponent
     },
@@ -22,8 +30,6 @@ export const routes: Routes = [
     {
         path:'profil', component: ProfilComponent, canActivate: [AuthGuard]
     },
-    {
-        path:'contact', component: ContactComponent, //canActivate: [AuthGuard]
-    },
+   
     
 ];
