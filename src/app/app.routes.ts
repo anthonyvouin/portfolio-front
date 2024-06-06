@@ -6,6 +6,8 @@ import { AuthGuard } from '../guard/auth.guard'
 import { ContactComponent } from '../pages/contact/contact.component';
 import { ProfilComponent } from '../pages/profil/profil.component';
 import { SkillsComponent } from '../pages/skills/skills.component';
+import { FormationsComponent } from '../pages/formations/formations.component';
+
 
 
 
@@ -19,6 +21,11 @@ export const routes: Routes = [
     {
         path:'competences', component: SkillsComponent, //canActivate: [AuthGuard]
     },
+
+    {
+        path:'formations', component: FormationsComponent, //canActivate: [AuthGuard]
+    },
+    
     
     {
         path:'register', component: RegisterComponent
