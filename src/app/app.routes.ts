@@ -25,8 +25,7 @@ export const routes: Routes = [
     {
         path:'formations', component: FormationsComponent, //canActivate: [AuthGuard]
     },
-    
-    
+        
     {
         path:'register', component: RegisterComponent
     },
@@ -35,7 +34,7 @@ export const routes: Routes = [
         path:'login', component: LoginComponent 
     },
     {
-        path:'profil', component: ProfilComponent, canActivate: [AuthGuard]
+        path:'profil', component: ProfilComponent, canActivate: [AuthGuard], 
     },
    
     

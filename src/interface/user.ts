@@ -4,6 +4,8 @@ export interface User {
     lastName: string;
     email: string;
     password: string;
+    isAdmin?: boolean;
+
   }
   
   //Pour se conecter
