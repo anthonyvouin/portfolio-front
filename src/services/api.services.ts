@@ -9,7 +9,7 @@ import { AuthService } from './auth.services'
 
 export class ApiService {
 
-  // Ur: du back pour les appels api
+  // Url: du back pour les appels api
   private baseUrl = 'http://localhost:3000'; 
 
   constructor(  private authService: AuthService)  { }
@@ -34,12 +34,9 @@ export class ApiService {
         };
   
   
-
-
     // Construction de l'URL complète en concaténant l'URL de base et l'URL spécifiée
 
        return fetch(`${this.baseUrl}${url}`, requestOptions)
-
 
       .then(response => {
 
