@@ -27,6 +27,8 @@ export class ApiService {
               // Si un token est disponible, l'ajouter à l'en-tête Authorization
         ...(token && { 'Authorization': `Bearer ${token}` })
           },
+          // Encodage de body en JSON si body est fourni
+
           body: body?JSON.stringify(body):null
         };
   
@@ -45,7 +47,8 @@ export class ApiService {
           throw new Error('Erreur lors de la requête HTTP');
         }
 
-        return response.json() as Promise<T>;
+         // Décodage de la réponse JSON
+          return response.json() as Promise<T>;
       })
 
       .catch(error => {
