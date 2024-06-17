@@ -1,5 +1,10 @@
 <!-- register.component.html -->
-<div class="container mx-auto mt-8">
+<div class=" container py-16">
+  <div class="text-center mb-6">
+    <h2 class="formulaire-heading text-color ">Formulaire d'inscription</h2>
+  </div>
+
+
   <form (submit)="registerUser()" [formGroup]="formGroup" class="max-w-md mx-auto">
     <div class="mb-4">
       <label for="firstName" class="block">Prénom</label>
@@ -26,3 +31,10 @@
       [disabled]="formGroup.invalid">Créer un compte</button>
   </form>
 </div>
+
+
+
+
+
+
+
