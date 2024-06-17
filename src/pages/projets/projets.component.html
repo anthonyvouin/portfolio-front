@@ -1,1 +1,18 @@
-<p>Page de réalisation</p>
+<h2>Liste des projets</h2>
+
+<!-- Afficher un message si aucun projet n'est présent -->
+<p *ngIf="projets.length === 0">Aucun projet trouvé.</p>
+
+<!-- Liste des projets -->
+<ul>
+  <li *ngFor="let projet of projets">
+    <div>
+      <h3>{{ projet.title }}</h3>
+      <p>{{ projet.description }}</p>
+      <p>{{ projet.explanation }}</p>
+      <p>Catégorie : {{ projet.category }}</p>
+      <img [src]="projet.image" alt="Image du projet">
+      <p>Date : {{ projet.date | date }}</p>
+    </div>
+  </li>
+</ul>
