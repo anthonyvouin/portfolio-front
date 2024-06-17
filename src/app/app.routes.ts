@@ -7,6 +7,9 @@ import { ContactComponent } from '../pages/contact/contact.component';
 import { ProfilComponent } from '../pages/profil/profil.component';
 import { SkillsComponent } from '../pages/skills/skills.component';
 import { FormationsComponent } from '../pages/formations/formations.component';
+import { DeleteAccountComponent } from '../components/delete-account/delete-account.component';
+import { UpdatePasswordComponent } from '../components/update-password/update-password.component';
+import { UpdateUserInfoComponent } from '../components/update-user-info/update-user-info.component';
 
 
 
@@ -36,6 +39,7 @@ export const routes: Routes = [
     {
         path:'profil', component: ProfilComponent, canActivate: [AuthGuard], 
     },
+  
    
     
 ];

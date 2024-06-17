@@ -1,4 +1,34 @@
-<p>profil works!</p>
-<app-delete-account></app-delete-account>
-<app-update-password></app-update-password>
-<app-update-user-info></app-update-user-info>
+<div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div class="w-full max-w-3xl p-6 bg-white rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-8 text-center">Tableau de bord</h2>
+        
+        <div class="space-y-4">
+            <button 
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-300 block text-center"
+                (click)="showComponent('delete')">Supprimer mon compte
+            </button>
+            
+            <button 
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-300 block text-center"
+                (click)="showComponent('updatePassword')">Mettre à jour le mot de passe
+            </button>
+            
+            <button 
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-300 block text-center"
+                (click)="showComponent('updateInfo')">Mettre à jour les informations
+            </button>
+        </div>
+
+        <div class="mt-8">
+            <div *ngIf="currentComponent === 'delete'" class="border p-4 rounded-lg shadow-md bg-gray-50">
+                <app-delete-account></app-delete-account>
+            </div>
+            <div *ngIf="currentComponent === 'updatePassword'" class="border p-4 rounded-lg shadow-md bg-gray-50">
+                <app-update-password></app-update-password>
+            </div>
+            <div *ngIf="currentComponent === 'updateInfo'" class="border p-4 rounded-lg shadow-md bg-gray-50">                
+                <app-update-user-info></app-update-user-info>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,6 +17,7 @@ export class AppComponent {
   title:string = 'angularProjetV1';
   number:number = 1
   showHeaderFooter: boolean = true;
+  
 
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
