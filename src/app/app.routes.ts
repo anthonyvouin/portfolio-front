@@ -10,6 +10,7 @@ import { FormationsComponent } from '../pages/formations/formations.component';
 import { DeleteAccountComponent } from '../components/delete-account/delete-account.component';
 import { UpdatePasswordComponent } from '../components/update-password/update-password.component';
 import { UpdateUserInfoComponent } from '../components/update-user-info/update-user-info.component';
+import { ProjetsComponent } from '../pages/projets/projets.component';
 
 
 
@@ -28,7 +29,9 @@ export const routes: Routes = [
     {
         path:'formations', component: FormationsComponent, //canActivate: [AuthGuard]
     },
-        
+    {
+        path:'projets', component: ProjetsComponent,  
+    }, 
     {
         path:'register', component: RegisterComponent
     },
