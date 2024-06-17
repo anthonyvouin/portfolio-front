@@ -17,7 +17,6 @@ export class ApiService {
   // Méthode générique pour effectuer une requête HTTP
   request<T>(url: string, method:string, body:null | object=null, token:string | null = null ): Promise<T> {
 
-
       // Configuration de la requête HTTP avec les données de l'utilisateur
         const requestOptions: RequestInit = {
           method: method,
