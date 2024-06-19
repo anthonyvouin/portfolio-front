@@ -3,6 +3,7 @@ import { DeleteAccountComponent } from '../../components/delete-account/delete-a
 import { UpdatePasswordComponent } from '../../components/update-password/update-password.component';
 import { UpdateUserInfoComponent } from '../../components/update-user-info/update-user-info.component';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profil',
@@ -15,8 +16,13 @@ import { CommonModule } from '@angular/common';
 export class ProfilComponent {
   currentComponent: string = '';
 
+  constructor(private router: Router) {}
+
   showComponent(component: string) {
     this.currentComponent = component;
   }
 
+  goToHome() {
+    this.router.navigate(['/']);  // Assurez-vous que '/home' est le chemin correct pour votre page d'accueil
+  }
 }
