@@ -6,7 +6,7 @@ export interface Projet {
     _id: string;
     name: string;
   }
-    image: string;
+    image: File | null;
     date?: Date | string; // Date peut être un objet Date ou une chaîne de caractères
   }
   

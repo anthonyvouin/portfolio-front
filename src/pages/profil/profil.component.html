@@ -32,6 +32,13 @@
                         Mettre à jour les informations
                     </button>
                 </li>
+                <li>
+                    <button 
+                        class="w-full text-left bg-purple-500 hover:bg-purple-600 text-white text-lg font-medium px-4 py-3 rounded-lg transition duration-300"
+                        (click)="showComponent('postProjet')">
+                        Rentrer un nouveau projet
+                    </button>
+                </li>
             </ul>
         </nav>
     </div>
@@ -47,6 +54,9 @@
             </div>
             <div *ngIf="currentComponent === 'updateInfo'" class="bg-white border p-6 rounded-lg shadow-lg">
                 <app-update-user-info></app-update-user-info>
+            </div>
+            <div *ngIf="currentComponent === 'postProjet'" class="bg-white border p-6 rounded-lg shadow-lg">
+                <app-postprojet></app-postprojet>
             </div>
         </div>
     </div>

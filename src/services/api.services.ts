@@ -15,23 +15,37 @@ export class ApiService {
 
 
   // Méthode générique pour effectuer une requête HTTP
-  request<T>(url: string, method:string, body:null | object=null, token:string | null = null ): Promise<T> {
-
-      // Configuration de la requête HTTP avec les données de l'utilisateur
-        const requestOptions: RequestInit = {
-          method: method,
-          headers: {
-            'Content-Type': 'application/json',
-              // Si un token est disponible, l'ajouter à l'en-tête Authorization
-        ...(token && { 'Authorization': `Bearer ${token}` })
-          },
-          
-          // Encodage de body en JSON si body est fourni
-
-          body: body?JSON.stringify(body):null
-        };
+  request<T>(
+    url: string,
+    method:string, 
+    body:null | object | FormData = null, 
+    token:string | null = null,
+    contentType: string = 'application/json'   
   
-  
+  ): Promise<T> {
+
+
+    // Headers de la requête
+    const headers: Record<string, string> = {};
+
+    if(body && !(body instanceof FormData)) {
+      headers['content-Type'] = contentType
+    }
+
+    // Ajouter l'en-tête Authorization si un token est disponible
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
+      // Options de la requête
+      const requestOptions: RequestInit = {
+        method: method,
+        headers: headers,
+        body: body instanceof FormData ? body : body ? JSON.stringify(body) : null,
+      };
+
+
+       
     // Construction de l'URL complète en concaténant l'URL de base et l'URL spécifiée
 
        return fetch(`${this.baseUrl}${url}`, requestOptions)

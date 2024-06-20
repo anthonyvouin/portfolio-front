@@ -3,7 +3,7 @@
   <div class="text-center mb-6">
     <h2 class="contact-heading text-color ">Formulaire de contact</h2>
   </div>
-  <form (submit)="registerUser()" [formGroup]="formGroup" class="max-w-md mx-auto">
+  <form (submit)="submitContact()" [formGroup]="formGroup" class="max-w-md mx-auto">
     <div class="mb-4">
       <label for="firstName" class="block text-color">Prénom</label>
       <input type="text" id="firstName" name="firstName" formControlName="firstName" required

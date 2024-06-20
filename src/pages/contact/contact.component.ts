@@ -33,7 +33,7 @@ export class ContactComponent {
   
   
     // Méthode pour recuperer les données saisi par utilisateur
-    registerUser(): void {
+    submitContact(): void {
     if (this.formGroup.valid) {
       const contact: Contact = {
         firstName: this.formGroup.get("firstName")?.value,
