@@ -18,6 +18,7 @@ import { AuthService } from '../../services/auth.services';
 export class PostprojetComponent {
 
   selectedFile: File | null = null;
+  categories: any[] = []; // Variable to store categories
 
   constructor(
     private readonly formBuilder: FormBuilder,
@@ -34,6 +35,20 @@ export class PostprojetComponent {
       image: [null, [Validators.required]]
     });
   
+    
+    ngOnInit(): void {
+      this.getCategories(); 
+    }
+
+    getCategories(): void {
+      this.apiService.request<any[]>('/category/get-all', 'GET')
+        .then(response => {
+          this.categories = response; 
+        })
+        .catch(error => {
+          console.error('Erreur lors de la récupération des catégories:', error);
+        });
+    }
 
   onFileSelected(event: any): void {
     this.selectedFile = event.target.files[0];
@@ -67,3 +82,4 @@ export class PostprojetComponent {
  }
 }
 }
+
