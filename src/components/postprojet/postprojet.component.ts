@@ -46,7 +46,7 @@ export class PostprojetComponent {
 
     if (this.formGroup.valid && this.selectedFile) {
 
-      const formData  = new FormData();
+      const formData:FormData  = new FormData();
       formData.append('title',this.formGroup.get('title')?.value)
       formData.append('description',this.formGroup.get('description')?.value)
       formData.append('explanation',this.formGroup.get('explanation')?.value)
