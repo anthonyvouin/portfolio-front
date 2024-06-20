@@ -53,17 +53,6 @@ export class PostprojetComponent {
       formData.append('category',this.formGroup.get('category')?.value)
       formData.append('image', this.selectedFile)
 
-       //const token = this.authService.getToken()
-      // const url = `http://localhost:3000/projet`;
-      // const options = {    
-      //     method: 'POST', 
-      //     body: formData,
-      //     headers:{
-      //       Authorization: `Bearer ${token}`
-      //     }
-      // };
-
-      // await fetch(url, options);
         
       const token = this.authService.getToken()
 
