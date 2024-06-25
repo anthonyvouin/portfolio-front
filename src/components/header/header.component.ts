@@ -8,10 +8,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-
   constructor(private authService: AuthService) {}
 
   logout(): void {
@@ -22,7 +21,12 @@ export class HeaderComponent {
     return this.authService.isLoggedIn();
   }
 
- 
+  openLinkedInProfile(): void {
+    window.open(
+      'https://www.linkedin.com/in/anthony-vouin-b742a91ba/',
+      '_blank'
+    );
+  }
 }
 
   
