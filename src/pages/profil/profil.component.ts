@@ -24,6 +24,6 @@ export class ProfilComponent {
   }
 
   goToHome() {
-    this.router.navigate(['/']);  // Assurez-vous que '/home' est le chemin correct pour votre page d'accueil
+    this.router.navigate(['/']);  
   }
 }
