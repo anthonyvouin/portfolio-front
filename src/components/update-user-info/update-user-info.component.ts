@@ -41,7 +41,7 @@ export class UpdateUserInfoComponent {
 
  // Appel de l'API pour mettre à jour les informations utilisateur
  const token = this.authService.getToken();
- this.apiService.request<any>('/auth/update-account', 'PUT', updatedUserInfo, token)
+ this.apiService.request<any>('/api/auth/update-account', 'PUT', updatedUserInfo, token)
    .then((data) => {
     this.updateUserInfoForm.reset();
 

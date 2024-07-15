@@ -45,7 +45,7 @@ export class ContactComponent {
   
 
     // Envoi de la requête HTTP pour enregistrer l'utilisateur
-    this.apiService.request<any>('/contact', 'POST', contact)
+    this.apiService.request<any>('/api/contact', 'POST', contact)
         .then(() => {
           this.formGroup.reset();
           this.router.navigate(['/']); 

@@ -45,7 +45,7 @@ export class RegisterComponent {
   
 
     // Envoi de la requête HTTP pour enregistrer l'utilisateur
-    this.apiService.request<any>('/auth/register','POST', user)
+    this.apiService.request<any>('/api/auth/register','POST', user)
       .then((data) => {
         if (typeof data === 'object' && 'token' in data) {
           this.authService.login(data.token); // Utilisez le service AuthService pour stocker le JWT dans les cookies

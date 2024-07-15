@@ -21,7 +21,7 @@ export class ProjetsComponent implements OnInit {
   }
 
   fetchProjets(): void {
-    this.apiService.request<Projet[]>('/projet/get-all-projets', 'GET')
+    this.apiService.request<Projet[]>('/api/projet/get-all-projets', 'GET')
       .then(projets => {
         this.projets = projets;
       })

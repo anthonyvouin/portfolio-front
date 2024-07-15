@@ -39,7 +39,7 @@ export class LoginComponent {
       };
 
 
-      this.apiService.request<any>('/auth/login','POST', user)
+      this.apiService.request<any>('/api/auth/login','POST', user)
       .then((data) => {
         if (typeof data === 'object' && 'token' in data) {
           this.authService.login(data.token); 

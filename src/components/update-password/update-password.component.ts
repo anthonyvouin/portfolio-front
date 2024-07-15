@@ -54,7 +54,7 @@ export class UpdatePasswordComponent {
 
       const token = this.authService.getToken();
       
-      this.apiService.request<any>('/auth/update-password', 'PUT', updatedUser, token)
+      this.apiService.request<any>('/api/auth/update-password', 'PUT', updatedUser, token)
         .then((data) => {
           this.updatePasswordForm.reset();
 

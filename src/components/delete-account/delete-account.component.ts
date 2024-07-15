@@ -28,7 +28,7 @@ export class DeleteAccountComponent {
 deleteAccount(): void {
   const token = this.authService.getToken(); 
 
-  this.apiService.request<any>('/auth/delete-account', 'DELETE', null, token)
+  this.apiService.request<any>('/api/auth/delete-account', 'DELETE', null, token)
     .then((data) => {     
       this.authService.logout();
      })

@@ -41,7 +41,7 @@ export class PostprojetComponent {
     }
 
     getCategories(): void {
-      this.apiService.request<any[]>('/category/get-all', 'GET')
+      this.apiService.request<any[]>('/api/category/get-all', 'GET')
         .then(response => {
           this.categories = response; 
         })
@@ -71,7 +71,7 @@ export class PostprojetComponent {
         
       const token = this.authService.getToken()
 
-    this.apiService.request<any>('/projet', 'POST', formData, token, 'multipart/form-data')
+    this.apiService.request<any>('/api/projet', 'POST', formData, token, 'multipart/form-data')
         .then(() => {
           this.formGroup.reset();
         })
