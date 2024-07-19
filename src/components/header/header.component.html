@@ -1,13 +1,21 @@
-<!-- header.component.html -->
-<header class="bg-blanc">
-  <div class="container mx-auto py-4">
-    <!-- Main navigation -->
-    <nav class="flex justify-center space-x-8">
-      <a href="#" class="text-color ">Accueil</a>
-      <a href="/competences" class="text-color ">Compétences</a>
-      <a href="/projets"class="text-color ">Réalisations</a>
-      <a href="/formations" class="text-color ">Formations</a>
-      <a href="/contact" class="text-color ">Contact</a>
+<header class="bg-white">
+  <div class="container mx-auto px-4 py-4">
+    <!-- Logo et bouton hamburger -->
+    <div class="flex justify-between items-center">
+      <button (click)="isMenuOpen = !isMenuOpen" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Navigation principale -->
+    <nav [ngClass]="{'hidden': !isMenuOpen}" class="md:flex flex-col md:flex-row justify-center md:space-x-8 space-y-2 md:space-y-0 mt-4 md:mt-0">
+      <a href="#" class="block md:inline-block text-color">Accueil</a>
+      <a href="/competences" class="block md:inline-block text-color">Compétences</a>
+      <a href="/projets" class="block md:inline-block text-color">Réalisations</a>
+      <a href="/formations" class="block md:inline-block text-color">Formations</a>
+      <a href="/contact" class="block md:inline-block text-color">Contact</a>
     </nav>
   </div>
 </header>

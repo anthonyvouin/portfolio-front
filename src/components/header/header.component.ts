@@ -13,6 +13,10 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   constructor(private authService: AuthService) {}
 
+  isMenuOpen: boolean = false;
+
+  
+
   logout(): void {
     this.authService.logout();
   }
